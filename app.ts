@@ -1,33 +1,16 @@
-type Conbinable = number | string;
-type ConversionDescriptor = 'as-number' | 'as-text';
+let userInput: unknown;
+let userName: string;
 
-function combine (
-  input1: Conbinable, 
-  input2: Conbinable, 
-  resultConversion: ConversionDescriptor
-) {
-  let result;
-  if (typeof input1 === 'number' && typeof input2 === 'number' ){
-    result = input1 + input2;
-  } else {
-    result = input1.toString() + input2.toString();
-  }
 
-  // if (resultConversion === 'as-number') {
-  //   return  +result;
-  // } else {
-  //   return result.toString();
-  // }
-  return result;
+userInput = 5;
+userInput = 'Max';
+
+if (typeof userInput === 'string') {
+  userName = userInput;
 }
 
-const combinedAges = combine(30, 50, 'as-number');
-console.log(combinedAges);
+function generateError ( message: string, code: number) : never{
+  throw {message: message, errorCode: code}
+}
 
-const combinedStringAges = combine(30, 50, 'as-number');
-console.log(combinedStringAges);
-
-const combinedNames = combine('Nana', 'Suzuki', 'AS-text');
-console.log(combinedNames);
-
-
+generateError('エラーが発生しました', 500);
