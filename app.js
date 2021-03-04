@@ -1,11 +1,5 @@
-var userInput;
-var userName;
-userInput = 5;
-userInput = 'Max';
-if (typeof userInput === 'string') {
-    userName = userInput;
-}
-function generateError(message, code) {
-    throw { message: message, errorCode: code };
-}
-generateError('エラーが発生しました', 500);
+"use strict";
+const button = document.querySelector('button');
+button === null || button === void 0 ? void 0 : button.addEventListener('click', () => {
+    console.log('Clicked');
+});
